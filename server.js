@@ -1,10 +1,10 @@
 const express = require('express');
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
-const userRoutes = require('./routes/userRoutes'); // Fix path
-const postRoutes = require('./routes/postRoutes'); // Fix path
-const commentRoutes = require('./routes/commentRoutes'); // Fix path
-const resetRoutes = require('./routes/resetRoutes'); // Fix path
+const userRoutes = require('./routes/userRoutes');
+const postRoutes = require('./routes/postsRoutes');
+const commentRoutes = require('./routes/commentRoutes');
+const resetRoutes = require('./routes/resetRoutes');
 const db = require('./db');
 require('dotenv').config();
 
@@ -39,7 +39,7 @@ const swaggerOptions = {
     info: { title: 'Blog API', version: '1.0.0', description: 'API for a simple blog application' },
     servers: [{ url: process.env.API_BASE_URL }],
   },
-  apis: ['./routes/*.js'], // Fix path for Swagger
+  apis: ['./routes/*.js'],
 };
 
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
